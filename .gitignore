@@ -4,7 +4,11 @@
 
 /.vs
 /AdventOfCode/.vs/AdventOfCode/v16
-/AdventOfCode/AdventOfCode/obj
-/AdventOfCode/AdventOfCode.Tests/bin/Debug/netcoreapp3.1
-/AdventOfCode/AdventOfCode/bin
-/AdventOfCode/AdventOfCode.Tests/obj
+/AdventOfCode/AdventOfCode/obj/*
+/AdventOfCode/AdventOfCode/bin/*
+/AdventOfCode/AdventOfCode.Tests/bin/*
+/AdventOfCode/AdventOfCode.Tests/obj/*
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release

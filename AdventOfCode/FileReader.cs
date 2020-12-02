@@ -21,5 +21,18 @@ namespace AdventOfCode
 
             return result;
         }
+
+        public List<string> ReadFileToStringArray(string filePath)
+        {
+            List<string> result;
+
+            using (StreamReader r = new StreamReader(filePath))
+            {
+                string json = r.ReadToEnd();
+                result = JsonConvert.DeserializeObject<List<string>>(json);
+            }
+
+            return result;
+        }
     }
 }

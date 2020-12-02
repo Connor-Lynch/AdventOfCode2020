@@ -1,4 +1,5 @@
 ﻿using AdventOfCode.Day1;
+using AdventOfCode.Day2;
 using Figgle;
 using System;
 
@@ -25,6 +26,11 @@ namespace AdventOfCode
                             InitDay(day);
                             var day1 = new Day1Solution(fileReader);
                             day1.Solve();
+                            break;
+                        case "2":
+                            InitDay(day);
+                            var day2 = new Day2Solution(fileReader);
+                            day2.Solve();
                             break;
                         default:
                             Console.WriteLine("Value entered not found, please try again");
