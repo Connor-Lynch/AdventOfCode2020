@@ -8,7 +8,7 @@ using System.Text;
 
 namespace AdventOfCode.Day1
 {
-    public class Day1Solution
+    public class Day1Solution : ISolution
     {
         private IFileReader _fileReader;
         private List<int> _expenses;

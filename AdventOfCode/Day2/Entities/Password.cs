@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AdventOfCode.Day2.Entities
+﻿namespace AdventOfCode.Day2.Entities
 {
     public class Password
     {

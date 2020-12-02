@@ -3,11 +3,10 @@ using AdventOfCode.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AdventOfCode.Day2
 {
-    public class Day2Solution
+    public class Day2Solution : ISolution
     {
         private IFileReader _fileReader;
         public List<Password> _passwords;
