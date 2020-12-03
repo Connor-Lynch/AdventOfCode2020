@@ -32,7 +32,7 @@ namespace AdventOfCode.Day1
         {
             var combos = CombinationsExtention.GetCombinations(_expenses, numberOfExpenses);
             var foundExpenses = combos.Where(c => c.Sum() == 2020).FirstOrDefault();
-            var answer = foundExpenses.Aggregate(1, (a, b) => a * b); ;
+            var answer = foundExpenses.Aggregate(1, (a, b) => a * b);
 
             return answer;
         }
