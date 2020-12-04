@@ -3,7 +3,7 @@ This repo contains my work on the 2020 Advent Of Code.  This year I decided to w
 
 ## Solutions Times
 |  Day  |  Part 1  |   Part 2  |
-| ----- |:--------:| ---------:|
+| :---: |:--------:| :-------: |
 |   1   | 0.6407ms | 236.333ms |
 |   2   | 0.2465ms | 0.0522ms  |
 |   3   | 0.0338ms | 0.1201ms  |
