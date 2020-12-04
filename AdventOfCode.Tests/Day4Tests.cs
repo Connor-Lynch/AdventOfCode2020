@@ -101,9 +101,9 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateYearsShouldReturnTrueWithValidYear()
         {
-            var min = _solution.ValidateYear(1920, 2002, "1920");
-            var middle = _solution.ValidateYear(1920, 2002, "1980");
-            var max = _solution.ValidateYear(1920, 2002, "2002");
+            var min = _solution._passportValidator.ValidateYear(1920, 2002, "1920");
+            var middle = _solution._passportValidator.ValidateYear(1920, 2002, "1980");
+            var max = _solution._passportValidator.ValidateYear(1920, 2002, "2002");
 
             Assert.IsTrue(min);
             Assert.IsTrue(middle);
@@ -113,11 +113,11 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateYearsShouldReturnFalseWithInvalidYear()
         {
-            var low = _solution.ValidateYear(1920, 2002, "1919");
-            var high = _solution.ValidateYear(1920, 2002, "2003");
-            var sml = _solution.ValidateYear(1920, 2002, "198");
-            var lrg = _solution.ValidateYear(1920, 2002, "19800");
-            var invalid = _solution.ValidateYear(1920, 2002, "test");
+            var low = _solution._passportValidator.ValidateYear(1920, 2002, "1919");
+            var high = _solution._passportValidator.ValidateYear(1920, 2002, "2003");
+            var sml = _solution._passportValidator.ValidateYear(1920, 2002, "198");
+            var lrg = _solution._passportValidator.ValidateYear(1920, 2002, "19800");
+            var invalid = _solution._passportValidator.ValidateYear(1920, 2002, "test");
 
 
             Assert.IsFalse(low);
@@ -130,13 +130,13 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateHeightShouldReturnTrueWithValidHeight()
         {
-            var minIn = _solution.ValidateHeight("59in");
-            var middleIn = _solution.ValidateHeight("60in");
-            var maxIn = _solution.ValidateHeight("76in");
+            var minIn = _solution._passportValidator.ValidateHeight("59in");
+            var middleIn = _solution._passportValidator.ValidateHeight("60in");
+            var maxIn = _solution._passportValidator.ValidateHeight("76in");
 
-            var minCm = _solution.ValidateHeight("150cm");
-            var middleCm = _solution.ValidateHeight("175cm");
-            var maxCm = _solution.ValidateHeight("193cm");
+            var minCm = _solution._passportValidator.ValidateHeight("150cm");
+            var middleCm = _solution._passportValidator.ValidateHeight("175cm");
+            var maxCm = _solution._passportValidator.ValidateHeight("193cm");
 
             Assert.IsTrue(minIn);
             Assert.IsTrue(middleIn);
@@ -150,15 +150,15 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateHeightShouldReturnFalseWithInvalidHeight()
         {
-            var lowIn = _solution.ValidateHeight("58in");
-            var heighIn = _solution.ValidateHeight("77in");
-            var invalidIn = _solution.ValidateHeight("sixin");
+            var lowIn = _solution._passportValidator.ValidateHeight("58in");
+            var heighIn = _solution._passportValidator.ValidateHeight("77in");
+            var invalidIn = _solution._passportValidator.ValidateHeight("sixin");
 
-            var lowCm = _solution.ValidateHeight("149cm");
-            var heighCm = _solution.ValidateHeight("194cm");
-            var invalidCm = _solution.ValidateHeight("sixcm");
+            var lowCm = _solution._passportValidator.ValidateHeight("149cm");
+            var heighCm = _solution._passportValidator.ValidateHeight("194cm");
+            var invalidCm = _solution._passportValidator.ValidateHeight("sixcm");
 
-            var invalidUnit = _solution.ValidateHeight("123");
+            var invalidUnit = _solution._passportValidator.ValidateHeight("123");
 
             Assert.IsFalse(lowIn);
             Assert.IsFalse(heighIn);
@@ -174,11 +174,11 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateHairColorShouldReturnTrueWithValidColor()
         {
-            var valid = _solution.ValidateHairColor("#123abc");
-            var intMin = _solution.ValidateHairColor("#000000");
-            var intMax = _solution.ValidateHairColor("#999999");
-            var charMin = _solution.ValidateHairColor("#AAAAAA");
-            var charMax = _solution.ValidateHairColor("#FFFFFF");
+            var valid = _solution._passportValidator.ValidateHairColor("#123abc");
+            var intMin = _solution._passportValidator.ValidateHairColor("#000000");
+            var intMax = _solution._passportValidator.ValidateHairColor("#999999");
+            var charMin = _solution._passportValidator.ValidateHairColor("#AAAAAA");
+            var charMax = _solution._passportValidator.ValidateHairColor("#FFFFFF");
 
             Assert.IsTrue(valid);
             Assert.IsTrue(intMin);
@@ -190,8 +190,8 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateHairColorShouldReturnFalseWithInalidColor()
         {
-            var invalid1 = _solution.ValidateHairColor("#123abz");
-            var invalid2 = _solution.ValidateHairColor("123abc");
+            var invalid1 = _solution._passportValidator.ValidateHairColor("#123abz");
+            var invalid2 = _solution._passportValidator.ValidateHairColor("123abc");
 
             Assert.IsFalse(invalid1);
             Assert.IsFalse(invalid2);
@@ -200,13 +200,13 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateEyeColorShouldReturnTrueWithValidColor()
         {
-            var amb = _solution.ValidateEyeColor("amb");
-            var blu = _solution.ValidateEyeColor("blu");
-            var brn = _solution.ValidateEyeColor("brn");
-            var gry = _solution.ValidateEyeColor("gry");
-            var grn = _solution.ValidateEyeColor("grn");
-            var hzl = _solution.ValidateEyeColor("hzl");
-            var oth =_solution.ValidateEyeColor("oth");
+            var amb = _solution._passportValidator.ValidateEyeColor("amb");
+            var blu = _solution._passportValidator.ValidateEyeColor("blu");
+            var brn = _solution._passportValidator.ValidateEyeColor("brn");
+            var gry = _solution._passportValidator.ValidateEyeColor("gry");
+            var grn = _solution._passportValidator.ValidateEyeColor("grn");
+            var hzl = _solution._passportValidator.ValidateEyeColor("hzl");
+            var oth =_solution._passportValidator.ValidateEyeColor("oth");
 
             Assert.IsTrue(amb);
             Assert.IsTrue(blu);
@@ -220,7 +220,7 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidateEyeColorShouldReturnFalseWithInvalidColor()
         {
-            var invalid = _solution.ValidateEyeColor("blk");
+            var invalid = _solution._passportValidator.ValidateEyeColor("blk");
 
             Assert.IsFalse(invalid);
         }
@@ -228,7 +228,7 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidatePassportIdShouldReturnTrueForValidPassport()
         {
-            var valid = _solution.ValidatePassportId("000000001");
+            var valid = _solution._passportValidator.ValidatePassportId("000000001");
 
             Assert.IsTrue(valid);
         }
@@ -236,7 +236,7 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ValidatePassportIdShouldReturnFalseForInalidPassport()
         {
-            var invalid = _solution.ValidatePassportId("0123456789");
+            var invalid = _solution._passportValidator.ValidatePassportId("0123456789");
 
             Assert.IsFalse(invalid);
         }
