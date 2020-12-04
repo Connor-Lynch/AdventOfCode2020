@@ -1,4 +1,5 @@
 ﻿using AdventOfCode.Interfaces;
+using System.Collections.Generic;
 
 namespace AdventOfCode
 {
@@ -11,6 +12,7 @@ namespace AdventOfCode
         static void Main(string[] args)
         {
             InIt();
+            
             do
             {
                 var day = _consoleHelper.GetDayFromUser();
@@ -21,6 +23,7 @@ namespace AdventOfCode
 
                     var solution = _solutionFactory.GetSolution(day);
                     solution.Solve();
+                    solution.PrintAnswers();
                 } else
                 {
                     _run = false;

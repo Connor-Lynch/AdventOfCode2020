@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AdventOfCode.Day2
 {
-    public class Day2Solution : ISolution
+    public class Day2Solution : SolutionBase, ISolution
     {
         private IFileReader _fileReader;
         public List<Password> _passwords;
@@ -15,17 +15,22 @@ namespace AdventOfCode.Day2
         {
             _fileReader = fileReader;
             InitPasswords();
+            ResetSolution();
         }
 
         public void Solve()
         {
+            StartTime();
             var part1Answer = GetValidPasswords(1).Count;
-            Console.WriteLine($"Part 1: {part1Answer}");
+            StopTime();
+            SetAnswer(part1Answer);
 
             ResetPasswordValidity();
 
+            StartTime();
             var part2Answer = GetValidPasswords(2).Count;
-            Console.WriteLine($"Part 2: {part2Answer}");
+            StopTime();
+            SetAnswer(part2Answer);
         }
 
         public List<Password> GetValidPasswords(int part)

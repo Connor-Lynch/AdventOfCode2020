@@ -8,7 +8,7 @@ using System.Text;
 
 namespace AdventOfCode.Day1
 {
-    public class Day1Solution : ISolution
+    public class Day1Solution : SolutionBase, ISolution
     {
         private IFileReader _fileReader;
         private List<int> _expenses;
@@ -17,15 +17,20 @@ namespace AdventOfCode.Day1
         {
             _fileReader = fileReader;
             _expenses = InitExpenses();
+            ResetSolution();
         }
 
         public void Solve()
         {
+            StartTime();
             var part1Answer = GetProductOfExpenses(2);
-            Console.WriteLine($"Part 1: {part1Answer}");
+            StopTime();
+            Answers.Add(part1Answer.ToString());
 
+            StartTime();
             var part2Answer = GetProductOfExpenses(3);
-            Console.WriteLine($"Part 2: {part2Answer}");
+            StopTime();
+            Answers.Add(part2Answer.ToString());
         }
 
         public int GetProductOfExpenses(int numberOfExpenses)

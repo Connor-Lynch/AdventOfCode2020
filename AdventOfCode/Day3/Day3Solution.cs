@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AdventOfCode.Day3
 {
-    public class Day3Solution : ISolution
+    public class Day3Solution : SolutionBase, ISolution
     {
         private IFileReader _fileReader;
         public Map _map;
@@ -19,6 +19,7 @@ namespace AdventOfCode.Day3
         {
             _fileReader = fileReader;
             InitMap();
+            ResetSolution();
         }
 
         public void Solve()
@@ -26,12 +27,16 @@ namespace AdventOfCode.Day3
             _rightSteps = 3;
             _downSteps = 1;
 
+            StartTime();
             TraverseMap();
+            StopTime();
             var part1Answer = _map.Directions.TreesEncountered;
-            Console.WriteLine($"Part 1: {part1Answer}");
+            SetAnswer(part1Answer);
 
+            StartTime();
             var part2Answer = EvaluatePart2(part1Answer);
-            Console.WriteLine($"Part 2: {part2Answer}");
+            StopTime();
+            SetAnswer(part2Answer);
         }
 
         public int EvaluatePart2(int currentTrees)
