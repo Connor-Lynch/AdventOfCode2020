@@ -24,13 +24,11 @@ namespace AdventOfCode.Day1
         {
             StartTime();
             var part1Answer = GetProductOfExpenses(2);
-            StopTime();
-            Answers.Add(part1Answer.ToString());
+            SetAnswer(part1Answer.ToString());
 
             StartTime();
             var part2Answer = GetProductOfExpenses(3);
-            StopTime();
-            Answers.Add(part2Answer.ToString());
+            SetAnswer(part2Answer.ToString());
         }
 
         public int GetProductOfExpenses(int numberOfExpenses)

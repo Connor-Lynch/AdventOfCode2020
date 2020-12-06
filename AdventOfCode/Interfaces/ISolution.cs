@@ -3,9 +3,6 @@
     public interface ISolution
     {
         public void Solve();
-
-        public void PrintAnswers()
-        {
-        }
+        public void PrintAnswers();
     }
 }

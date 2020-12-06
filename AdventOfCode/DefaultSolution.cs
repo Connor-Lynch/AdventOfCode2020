@@ -7,6 +7,10 @@ namespace AdventOfCode
     {
         public void Solve()
         {
+        }
+
+        public void PrintAnswers()
+        {
             Console.WriteLine("No solution found, please try again");
         }
     }

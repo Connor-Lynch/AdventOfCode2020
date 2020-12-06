@@ -40,6 +40,7 @@ namespace AdventOfCode
 
         public void SetAnswer(object answer)
         {
+            StopTime();
             Answers.Add(answer.ToString());
         }
 

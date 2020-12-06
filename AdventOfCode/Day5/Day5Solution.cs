@@ -24,12 +24,10 @@ namespace AdventOfCode.Day5
             StartTime();
             SortBoardingPasses();
             var part1Solution = _boardingPasses.Last().SeatID;
-            StopTime();
             SetAnswer(part1Solution);
 
             StartTime();
             var part2Solution = GetOpenSeat();
-            StopTime();
             SetAnswer(part2Solution);
         }
 

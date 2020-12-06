@@ -22,14 +22,12 @@ namespace AdventOfCode.Day2
         {
             StartTime();
             var part1Answer = GetValidPasswords(1).Count;
-            StopTime();
             SetAnswer(part1Answer);
 
             ResetPasswordValidity();
 
             StartTime();
             var part2Answer = GetValidPasswords(2).Count;
-            StopTime();
             SetAnswer(part2Answer);
         }
 

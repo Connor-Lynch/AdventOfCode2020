@@ -29,13 +29,11 @@ namespace AdventOfCode.Day3
 
             StartTime();
             TraverseMap();
-            StopTime();
             var part1Answer = _map.Directions.TreesEncountered;
             SetAnswer(part1Answer);
 
             StartTime();
             var part2Answer = EvaluatePart2(part1Answer);
-            StopTime();
             SetAnswer(part2Answer);
         }
 

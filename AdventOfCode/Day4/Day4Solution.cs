@@ -24,12 +24,10 @@ namespace AdventOfCode.Day4
         {
             StartTime();
             var validPassports = GetPasspoortsWithRequiredFields();
-            StopTime();
             SetAnswer(validPassports.Count);
 
             StartTime();
             var part2Answer = GetPassportsWithValidData(validPassports).Count;
-            StopTime();
             SetAnswer(part2Answer);
         }
 
