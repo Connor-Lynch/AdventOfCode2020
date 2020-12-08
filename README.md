@@ -12,4 +12,4 @@ This repo contains my work on the 2020 Advent Of Code.  This year I decided to w
 |   4   | 0.0331ms | 0.5171ms  |
 |   5   | 0.5875ms | 0.0205ms  |
 |   6   | 0.3523ms | 2.296ms   |
-|   7   |69.0073ms | 0.3672ms  |
+|   7   |10.6471ms | 0.3672ms  |

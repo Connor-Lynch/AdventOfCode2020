@@ -61,9 +61,9 @@ namespace AdventOfCode.Tests
         [TestMethod]
         public void ShouldReturnAllRulesThatContainBagColor()
         {
-            var rule = _solution.GetRulesThatContainBag("shiny gold");
+            var count = _solution.GetRulesThatContainBag("shiny gold");
 
-            Assert.AreEqual(rule.Count, 4);
+            Assert.AreEqual(count, 4);
         }
 
         [TestMethod]

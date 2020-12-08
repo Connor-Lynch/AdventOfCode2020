@@ -22,7 +22,7 @@ namespace AdventOfCode.Day7
         public void Solve()
         {
             StartTime();
-            var part1Answer = GetRulesThatContainBag("shiny gold").Count();
+            var part1Answer = GetRulesThatContainBag("shiny gold");
             SetAnswer(part1Answer);
 
             StartTime();
@@ -30,18 +30,23 @@ namespace AdventOfCode.Day7
             SetAnswer(part2Answer);
         }
 
-        public List<LuggageRule> GetRulesThatContainBag(string bagColor)
+        public int GetRulesThatContainBag(string bagColor)
         {
-            var containingRules = new List<LuggageRule>();
-            var innerContainingRule = _luggageRules.Where(r => r.InnerBags.Where(b => b.Color == bagColor).Count() >= 1).ToList();
-            containingRules = AddIfNew(containingRules, innerContainingRule);
+            return _luggageRules.Where(r => SearchForContainingBags(bagColor, r) == true).Count();
+        }
 
-            foreach(var rule in innerContainingRule)
+        private bool SearchForContainingBags(string bagColor, LuggageRule currentRule)
+        {
+            foreach(var bag in currentRule.InnerBags)
             {
-                containingRules = AddIfNew(containingRules, GetRulesThatContainBag(rule.OuterColor));
+                if (bag.Color == bagColor)
+                {
+                    return true;
+                }
+                return SearchForContainingBags(bagColor, _luggageRules.Where(r => r.OuterColor == bag.Color).First());
             }
 
-            return containingRules;
+            return false;
         }
 
         public int GetNumberOfBagsInsideBag(string bagColor)
