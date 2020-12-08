@@ -52,31 +52,13 @@ namespace AdventOfCode.Day7
         public int GetNumberOfBagsInsideBag(string bagColor)
         {
             int numberOfBags = 1;
-            var outerBags = _luggageRules.Where(r => r.OuterColor == bagColor).ToList();
-
-            foreach(var bag in outerBags)
+            var outerBags = _luggageRules.Where(r => r.OuterColor == bagColor).First();
+            foreach(var innerBag in outerBags.InnerBags)
             {
-                foreach(var innerBag in bag.InnerBags)
-                {
-                    numberOfBags = numberOfBags + (innerBag.Count * GetNumberOfBagsInsideBag(innerBag.Color));
-                }
+                numberOfBags = numberOfBags + (innerBag.Count * GetNumberOfBagsInsideBag(innerBag.Color));
             }
 
             return numberOfBags;
-        }
-
-        public List<LuggageRule> AddIfNew(List<LuggageRule> parent, List<LuggageRule> childRules)
-        {
-            foreach(var child in childRules)
-            {
-                var exists = parent.Any(r => r == child);
-                if (!exists)
-                {
-                    parent.Add(child);
-                }
-            }
-
-            return parent;
         }
 
         private void InitLuggageRules()
