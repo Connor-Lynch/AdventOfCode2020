@@ -118,20 +118,12 @@ namespace AdventOfCode.Day8
 
         private bool ValidateCurrentIndex(int index)
         {
-            if (index >= 0 && index < _program.Instructions.Count)
-            {
-                return true;
-            }
-            return false;
+            return (index >= 0 && index < _program.Instructions.Count);
         }
 
         private bool ValidateTimesCalled(int index)
         {
-            if (_program.Instructions[index].TimesCalled > 0)
-            {
-                return false;
-            }
-            return true;
+            return !(_program.Instructions[index].TimesCalled > 0);
         }
 
         private void InitProgramData()
