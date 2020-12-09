@@ -154,7 +154,7 @@ namespace AdventOfCode.Day8
                 var newInstruction = new Instruction()
                 {
                     Opperation = GetOpperationFromRawData(instruction.Split()[0]),
-                    Offset = GetOffsetFromRawData(instruction.Split()[1]),
+                    Offset = Int32.Parse(instruction.Split()[1]),
                     TimesCalled = 0
                 };
 
@@ -169,15 +169,6 @@ namespace AdventOfCode.Day8
                 "acc" => Opperation.acc,
                 "jmp" => Opperation.jmp,
                 "nop" => Opperation.nop
-            };
-        }
-
-        private int GetOffsetFromRawData(string rawData)
-        {
-            return rawData[0] switch
-            {
-                '-' => (Int32.Parse(rawData.Replace("-", "")) * -1),
-                '+' => Int32.Parse(rawData.Replace("+", ""))
             };
         }
     }
