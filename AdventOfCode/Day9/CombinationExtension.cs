@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AdventOfCode.Day9
 {
-    public static class CombinationExtention
+    public static class CombinationExtension
     {
         public static IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<T> list, int length) where T : IComparable
         {

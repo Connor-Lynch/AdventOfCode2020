@@ -56,7 +56,7 @@ namespace AdventOfCode.Day9
                 var currentValue = _cypher[index];
 
                 var currentPool = _cypher.GetRange(index - preamble, preamble).Select(c => c.Number);
-                var combos = CombinationExtention.GetCombinations(currentPool, 2);
+                var combos = CombinationExtension.GetCombinations(currentPool, 2);
                 var validPairs = combos.Where(c => c.Sum() == currentValue.Number);
 
                 if (validPairs.Count() > 0)
