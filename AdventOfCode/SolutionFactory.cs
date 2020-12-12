@@ -1,6 +1,7 @@
 ﻿using AdventOfCode.Day1;
 using AdventOfCode.Day10;
 using AdventOfCode.Day11;
+using AdventOfCode.Day12;
 using AdventOfCode.Day2;
 using AdventOfCode.Day3;
 using AdventOfCode.Day4;
@@ -37,6 +38,7 @@ namespace AdventOfCode
                 "9" => new Day9Solution(_fileReader),
                 "10" => new Day10Solution(_fileReader),
                 "11" => new Day11Solution(_fileReader),
+                "12" => new Day12Solution(_fileReader),
                 _ => new DefaultSolution(),
             };
         }
